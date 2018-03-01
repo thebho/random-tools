@@ -15,6 +15,12 @@ func RandIndex(count int) int {
 	return randInt(0, count)
 }
 
+// RandIntFromArray returns a random string from the array passed
+func RandIntFromArray(array []int) int {
+	index := randInt(0, len(array))
+	return array[index]
+}
+
 func randInt(min int, max int) int {
 	rand.Seed(time.Now().UTC().UnixNano())
 	return min + rand.Intn(max-min)
